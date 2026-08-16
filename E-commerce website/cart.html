@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart - Saicaart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">Saicaart</div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="kids.html">Kids</a>
+        <a href="electronics.html">Electronics</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="cart.html" class="cart-link">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="page-banner">
+
+    <h1>Shopping Cart</h1>
+
+    <p>Review your selected products.</p>
+
+</section>
+
+
+<section class="cart-section">
+
+    <div id="cart-items"></div>
+
+
+    <div class="cart-summary">
+
+        <h2>Order Summary</h2>
+
+        <p>
+            Total Items:
+            <strong id="total-items">0</strong>
+        </p>
+
+        <p>
+            Total Amount:
+            <strong>₹<span id="cart-total">0</span></strong>
+        </p>
+
+        <button onclick="checkout()" class="checkout-btn">
+            Proceed to Checkout
+        </button>
+
+        <button onclick="clearCart()" class="clear-btn">
+            Clear Cart
+        </button>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>Saicaart</h2>
+
+    <p>© 2026 Saicaart. All Rights Reserved.</p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
