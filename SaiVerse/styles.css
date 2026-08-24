@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap');
+
+:root{
+  --paper:#EFE9DD;
+  --paper2:#E5DED0;
+  --ink:#141C2B;
+  --ink2:#4A5364;
+  --muted:#767E8C;
+  --blue:#2C4A8F;
+  --line:rgba(20,28,43,.16);
+  --nav-h:58px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Courier Prime",monospace;line-height:1.9;font-size:12px;letter-spacing:.055em}
+h1,h2,h3,h4{font-family:"Newsreader",serif;font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0}
+h1{font-size:clamp(38px,6vw,76px)}
+h2{font-size:clamp(32px,4vw,58px)}
+h3{font-size:27px}
+p{margin:0;color:var(--ink2)}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+::selection{background:var(--ink);color:var(--paper)}
+
+.nav{
+  height:var(--nav-h);position:fixed;inset:0 0 auto;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3vw;background:rgba(239,233,221,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.wordmark{font:500 20px "Newsreader",serif;letter-spacing:-.02em}
+.wordmark span,.accent{color:var(--blue);font-style:italic}
+.nav-links{display:flex;gap:clamp(12px,2.2vw,34px);align-items:center}
+.nav-links a{font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.square-btn{border:1px solid var(--ink);background:transparent;color:var(--ink);width:34px;height:34px;display:grid;place-items:center}
+.square-btn:hover{border-color:var(--blue);color:var(--blue)}
+
+main{padding-top:var(--nav-h)}
+.section{padding:100px 7vw;border-bottom:1px solid var(--line)}
+.hero{min-height:calc(100vh - var(--nav-h));background:var(--paper2);padding:8vh 7vw 0;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.kicker,.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:22px}
+.hero-copy{max-width:700px;position:relative;z-index:2}
+.hero h1{max-width:760px}
+.hero h1 em,h2 em{color:var(--blue);font-style:italic}
+.lede{max-width:650px;margin-top:26px;font-size:12px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);padding:9px 17px;text-transform:uppercase;letter-spacing:.1em;font-size:10px;background:transparent}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue);color:var(--paper)}
+.spec-strip{margin-top:auto;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:18px 0;gap:20px}
+.spec-strip b{display:block;font-weight:400;color:var(--muted);font-size:9px;text-transform:uppercase}
+.spec-strip span{display:block;font-size:11px}
+
+.spread{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;margin-top:55px;padding:12px 0 28px;transform:none;font:500 clamp(58px,11vw,150px)/.85 "Newsreader",serif;letter-spacing:-.055em;overflow:visible;white-space:nowrap;pointer-events:none;color:var(--ink);border-top:1px solid var(--line)}
+.spread span{transition:transform .2s linear}
+
+.two-col{display:grid;grid-template-columns:minmax(240px,.8fr) minmax(320px,1.2fr);gap:9vw}
+.lede-big{font-size:13px;max-width:520px}
+.ruled-list{margin-top:42px;border-top:1px solid var(--line)}
+.rule-row{display:grid;grid-template-columns:130px 1fr 150px;gap:25px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.rule-row .label{color:var(--blue);font-size:10px;text-transform:uppercase}
+.rule-row .value{text-align:right;color:var(--ink);font-weight:700}
+
+.demo{background:var(--paper2)}
+.variant-row{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 20px}
+.variant{border:1px solid var(--line);background:transparent;padding:8px 13px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.variant[aria-pressed="true"]{border-color:var(--blue);color:var(--blue)}
+.demo-panel{border:1px solid var(--line);min-height:470px;padding:35px;display:grid;grid-template-columns:1fr 260px;gap:40px;align-items:center}
+#drawing{width:100%;height:390px}
+.draw-path{fill:none;stroke:var(--blue);stroke-linecap:round;stroke-linejoin:round}
+.facts{border-left:1px solid var(--line);padding-left:25px}
+.fact{padding:17px 0;border-bottom:1px solid var(--line)}
+.fact:first-child{border-top:1px solid var(--line)}
+.fact small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase}
+.fact strong{font-family:"Newsreader",serif;font-size:27px;font-weight:500}
+
+.book-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:35px 0}
+.search{flex:1;min-width:240px;border:1px solid var(--line);background:transparent;padding:12px 14px;color:var(--ink);outline:none}
+.search:focus{border-color:var(--blue)}
+.genre-select{border:1px solid var(--line);background:transparent;padding:12px;color:var(--ink)}
+.genre-block{margin:65px 0}
+.genre-title{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--ink);padding-bottom:13px;margin-bottom:20px}
+.book-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+#allBooks{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px 18px}
+#allBooks .cover{width:100%;aspect-ratio:2/3;max-height:245px;object-fit:cover}
+#allBooks .book-card h4{font-size:17px}
+#allBooks .book-card .author{font-size:9px}
+#allBooks .book-card .tag{font-size:8px}
+.book-card{border-top:1px solid var(--line);padding-top:12px}
+.cover{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:var(--paper2);border:1px solid var(--line)}
+.book-card h4{font-size:20px;margin-top:13px}
+.book-card .author{font-size:10px;color:var(--muted);margin-top:4px}
+.book-card .tag{font-size:9px;text-transform:uppercase;color:var(--blue);margin-top:7px}
+.read-btn{display:inline-block;margin-top:9px;font-size:9px;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--blue)}
+
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:50px}
+.plan{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:330px}
+.plan .price{font:500 45px "Newsreader",serif;margin:20px 0}
+.plan ul{list-style:none;padding:0;margin:20px 0}
+.plan li{border-top:1px solid var(--line);padding:9px 0;color:var(--ink2)}
+.plan li::before{content:"— ";color:var(--blue)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:start}
+.founder-photo{width:100%;max-width:520px;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line)}
+.founder-caption{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+.founder-caption strong{font:500 28px "Newsreader",serif}
+.mission-list{border-top:1px solid var(--line);margin-top:35px}
+.mission-item{padding:18px 0;border-bottom:1px solid var(--line)}
+.mission-item b{color:var(--blue);font-size:10px}
+
+.form{max-width:720px;margin-top:40px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:20px}
+.field label{display:block;color:var(--blue);font-size:9px;text-transform:uppercase;margin-bottom:7px}
+.field input,.field textarea{width:100%;border:1px solid var(--line);background:transparent;padding:12px;color:var(--ink);outline:none}
+.field textarea{min-height:170px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--blue)}
+
+.reader{max-width:850px}
+.reader-meta{border-bottom:1px solid var(--line);padding-bottom:25px;margin-bottom:35px}
+.reader-meta .genre{color:var(--blue);font-size:10px;text-transform:uppercase}
+.reader h1{font-size:clamp(42px,6vw,70px);margin:12px 0}
+.reader-text p{font-size:13px;line-height:2.1;margin:0 0 25px}
+.quote{border-left:2px solid var(--blue);padding:8px 0 8px 20px;font:italic 25px "Newsreader",serif;margin:40px 0}
+
+.footer{padding:28px 7vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:9px;text-transform:uppercase;color:var(--muted)}
+.page-head{padding:100px 7vw 55px;background:var(--paper2);border-bottom:1px solid var(--line)}
+.page-head p{max-width:650px;margin-top:20px}
+.toast{position:fixed;right:22px;bottom:22px;border:1px solid var(--ink);background:var(--paper);padding:13px 17px;z-index:80;display:none}
+.toast.show{display:block}
+
+.traveller{position:fixed;z-index:3;width:min(220px,20vw);pointer-events:none;opacity:0;visibility:hidden;filter:drop-shadow(0 20px 20px rgba(20,28,43,.16));top:0;left:0;transform:translate(-50%,-50%);will-change:transform,opacity}
+.traveller img{width:100%;display:block}
+body.motion-on .traveller{animation:travel 1ms linear both;animation-timeline:scroll(root block)}
+@keyframes travel{
+  0%{transform:translate(84vw,68vh) rotate(-5deg) scale(.72);opacity:0}
+  8%{transform:translate(72vw,55vh) rotate(4deg) scale(.86);opacity:1}
+  25%{transform:translate(77vw,38vh) rotate(-7deg) scale(.9);opacity:1}
+  43%{transform:translate(61vw,59vh) rotate(7deg) scale(.82);opacity:1}
+  62%{transform:translate(23vw,48vh) rotate(-4deg) scale(.72);opacity:1}
+  78%{transform:translate(79vw,33vh) rotate(6deg) scale(.6);opacity:.35}
+  100%{transform:translate(90vw,20vh) rotate(10deg) scale(.45);opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .traveller{display:none!important}
+}
+@media (max-width:1000px){
+  .book-grid{grid-template-columns:repeat(4,1fr)}
+  #allBooks{grid-template-columns:repeat(4,1fr)}
+  .demo-panel{grid-template-columns:1fr}
+  .facts{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+}
+@media (max-width:760px){
+  #allBooks{grid-template-columns:repeat(2,1fr);gap:22px 14px}
+  #allBooks .cover{max-height:none}
+  .spread{font-size:14vw;padding-bottom:20px}
+  .nav{padding:0 4vw}.nav-links{display:none}
+  .section,.hero,.page-head{padding-left:5vw;padding-right:5vw}
+  .two-col,.about-grid{grid-template-columns:1fr;gap:45px}
+  .rule-row{grid-template-columns:90px 1fr}.rule-row .value{grid-column:2;text-align:left}
+  .book-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+  .plan-grid{grid-template-columns:1fr}
+  .spec-strip{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .spread{font-size:17vw}
+}
